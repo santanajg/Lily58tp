@@ -38,8 +38,7 @@
 &glidepoint_listener {
     scroller {
         layers = <LOWER>;
-        input-processors = <&zip_scroll_scaler 1 3>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_scroll_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
     };
 };
 
