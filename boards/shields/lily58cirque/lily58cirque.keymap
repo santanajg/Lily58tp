@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/pointing.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define DEFAULT  0
 #define LOWER    1
@@ -36,20 +37,22 @@
 };
 
 / {
-  zip_scroll_scaler: zip_scroll_scaler {
-    compatible = "zmk,input-processor-scaler";
-    #input-processor-cells = <2>;
-    type = <INPUT_EV_REL>;
-    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
-    track-remainders;
-  };
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
 };
 
 
 &glidepoint_listener {
     scroller {
         layers = <LOWER>;
-        input-processors = <&zip_scroll_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_scroll_scaler 1 5>, <&zip_xy_to_scroll_mapper>;
     };
 };
 
