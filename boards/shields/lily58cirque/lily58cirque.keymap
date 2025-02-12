@@ -35,8 +35,6 @@
     tapping-term-ms = <200>;
 };
 
-
-
 &glidepoint_listener {
     scroller {
         layers = <LOWER>;
