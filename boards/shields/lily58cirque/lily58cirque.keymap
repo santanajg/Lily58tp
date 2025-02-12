@@ -20,13 +20,6 @@
 #define MILOWER   6
 #define MO_TO(layer) &mo_to layer layer   // Macro to apply momentary-layer-on-hold/to-layer-on-tap to a specific layer
 
-&glidepoint_listener {
-    scroller {
-        layers = <LOWER>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-}
-
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -39,6 +32,13 @@
 
 &mt {
     tapping-term-ms = <200>;
+};
+
+&glidepoint_listener {
+    scroller {
+        layers = <LOWER>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
 };
 
 / {
