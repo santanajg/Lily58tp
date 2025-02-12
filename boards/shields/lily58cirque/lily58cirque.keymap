@@ -22,7 +22,7 @@
 
 &glidepoint_listener {
     scroller {
-        layers = <LOWER>
+        layers = <LOWER>;
         input-processors = <&zip_xy_to_scroll_mapper>;
     }
 }
